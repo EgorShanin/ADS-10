@@ -37,7 +37,8 @@ Tree::~Tree() {
     deleteNode(root);
 }
 
-void recPerm(Tree::Node* node, int tree_size, int n, const std::vector<char>& vec) {
+void recPerm(Tree::Node* node, int tree_size, int n,
+    const std::vector<char>& vec) {
     vec.push_back(node->symb);
     if (node->children.empty()) {
         return;
