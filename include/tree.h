@@ -2,4 +2,20 @@
 #ifndef INCLUDE_TREE_H_
 #define INCLUDE_TREE_H_
 
+class Tree {
+ private:
+    struct Node {
+        char symb;
+        std::vector<Node*> children;
+    };
+    friend void recPerm(Tree::Node* node, int tree_size, int index, std::vector<char>& vec);
+    friend std::vector<char> getPerm(const Tree& tree, int index);
+    Node* createNode(const std::vector<char>& vec, char data);
+    void deleteNode(Node* node);
+    Node* root;
+
+ public:
+    Tree(const std::vector<char>& vec);
+    ~Tree();
+};
 #endif  // INCLUDE_TREE_H_
