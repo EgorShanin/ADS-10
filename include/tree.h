@@ -8,8 +8,8 @@ class Tree {
         char symb;
         std::vector<Node*> children;
     };
-    friend void recPerm(Tree::Node* node, int tree_size, int index, std::vector<char>& vec);
-    friend std::vector<char> getPerm(const Tree& tree, int index);
+    friend void recPerm(Tree::Node* node, int tree_size, int n, std::vector<char>& vec);
+    friend std::vector<char> getPerm(const Tree& tree, int n);
     Node* createNode(const std::vector<char>& vec, char data);
     void deleteNode(Node* node);
     Node* root;
