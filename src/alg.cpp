@@ -7,7 +7,7 @@
 
 Tree::Tree(const std::vector<char>& vec) {
     auto vec_copy = vec;
-    std::sort(vec_copy.begin(), vec_copy.end());
+    sort(vec_copy.begin(), vec_copy.end());
     root = createNode(vec_copy, ' ');
 }
 
