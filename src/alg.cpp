@@ -3,11 +3,12 @@
 #include  <fstream>
 #include  <locale>
 #include  <cstdlib>
+#include  <algorithm>
 #include  "tree.h"
 
 Tree::Tree(const std::vector<char>& vec) {
     auto vec_copy = vec;
-    sort(vec_copy.begin(), vec_copy.end());
+    std::sort(vec_copy.begin(), vec_copy.end());
     root = createNode(vec_copy, ' ');
 }
 
@@ -39,7 +40,7 @@ Tree::~Tree() {
 
 void recPerm(Tree::Node* node, int tree_size, int n,
     std::vector<char>* vec) {
-    vec.push_back(node->symb);
+    vec->push_back(node->symb);
     if (node->children.empty()) {
         return;
     }
