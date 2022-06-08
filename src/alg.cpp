@@ -38,7 +38,7 @@ Tree::~Tree() {
 }
 
 void recPerm(Tree::Node* node, int tree_size, int n,
-    const std::vector<char>& vec) {
+    std::vector<char>* vec) {
     vec.push_back(node->symb);
     if (node->children.empty()) {
         return;
@@ -63,6 +63,6 @@ std::vector<char> getPerm(const Tree& tree, int n) {
   }
   int i = n / tree_size;
   std::vector<char> result;
-  recPerm(tree.root->children[i], tree_size, n - (tree_size * i), result);
+  recPerm(tree.root->children[i], tree_size, n - (tree_size * i), &result);
   return result;
 }
