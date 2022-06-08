@@ -4,7 +4,7 @@
 #include <vector>
 
 class Tree {
-private:
+ private:
     struct Node {
         char symb;
         std::vector<Node*> children;
@@ -15,7 +15,7 @@ private:
     Node* createNode(const std::vector<char>& vec, char data);
     void deleteNode(Node* node);
     Node* root;
-public:
+ public:
     explicit Tree(const std::vector<char>& vec);
     ~Tree();
 };
